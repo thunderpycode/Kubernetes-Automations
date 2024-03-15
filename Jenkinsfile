@@ -1,8 +1,8 @@
 pipeline {
 
   environment {
-    dockerimagename = "scriptwithabhi/finalwebapp:7"
-    dockerImage = ""
+    dockerimagename = "nginx:latest"
+    dockerImage = "nginx"
   }
 
   agent any
