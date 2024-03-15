@@ -1,9 +1,9 @@
 pipeline {
 
-//   environment {
-//     dockerimagename = "nginx:latest"
-//     dockerImage = "nginx"
-//   }
+  environment {
+    dockerimagename = "nginx:latest"
+    dockerImage = "nginx"
+  }
 
   agent any
 
@@ -15,16 +15,16 @@ pipeline {
       }
     }
 
-    stage('Build image') {
-      steps{
-        script {
-          powershell """
+    // stage('Build image') {
+    //   steps{
+    //     script {
+    //       powershell """
           
-          docker run nginx:latest
-          """
-        }
-      }
-    }
+    //       docker run nginx:latest
+    //       """
+    //     }
+    //   }
+    // }
 
     stage('Pushing Image') {
       environment {
