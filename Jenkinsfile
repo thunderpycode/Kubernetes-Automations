@@ -20,7 +20,7 @@ pipeline {
         script {
           powershell """
           
-          docker run inginx:latest
+          docker run nginx:latest
           """
         }
       }
