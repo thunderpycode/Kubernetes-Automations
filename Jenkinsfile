@@ -1,7 +1,7 @@
 pipeline {
 
   environment {
-    dockerimagename = "scriptwithabhi/finalwebapp"
+    dockerimagename = "scriptwithabhi/finalwebapp:7"
     dockerImage = ""
   }
 
@@ -11,7 +11,7 @@ pipeline {
 
     stage('Checkout Source') {
       steps {
-        git 'https://github.com/shazforiot/nodeapp_test.git'
+        git 'https://github.com/thunderpycode/Kubernetes-Automations.git'
       }
     }
 
@@ -39,7 +39,7 @@ pipeline {
     stage('Deploying App to Kubernetes') {
       steps {
         script {
-          kubernetesDeploy(configs: "deploymentservice.yml", kubeconfigId: "kubernetes")
+          kubernetesDeploy(configs: "deploymentsvc.yml", kubeconfigId: "kubernetes")
         }
       }
     }
