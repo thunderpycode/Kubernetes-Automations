@@ -1,9 +1,9 @@
 pipeline {
 
-  environment {
-    dockerimagename = "nginx:latest"
-    dockerImage = "nginx"
-  }
+//   environment {
+//     dockerimagename = "nginx:latest"
+//     dockerImage = "nginx"
+//   }
 
   agent any
 
@@ -18,7 +18,10 @@ pipeline {
     stage('Build image') {
       steps{
         script {
-          dockerImage = docker.build dockerimagename
+          powershell """
+          
+          docker run inginx:latest
+          """
         }
       }
     }
